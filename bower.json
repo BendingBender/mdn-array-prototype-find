@@ -7,12 +7,17 @@
   ],
   "license": "CC0-1.0",
   "keywords": [
-    "MDN",
+    "mdn",
+    "polyfill",
     "shim",
     "array",
-    "Array.prototype.find",
-    "Array.find",
-    "find"
+    "array",
+    "prototype",
+    "array.prototype.find",
+    "array.find",
+    "find",
+    "es6",
+    "es2015"
   ],
   "homepage": "https://github.com/BendingBender/MDN-Array.prototype.find",
   "ignore": [
