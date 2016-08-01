@@ -1,6 +1,6 @@
 {
   "name": "mdn-array.prototype.find",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "MDN version of Array.prototype.find shim",
   "main": "index.js",
   "scripts": {
