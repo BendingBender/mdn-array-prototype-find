@@ -1,7 +1,7 @@
 {
   "name": "mdn-array.prototype.find",
   "description": "MDN version of Array.prototype.find shim",
-  "main": "index.min.js",
+  "main": "index.js",
   "authors": [
     "Dimitri Benin <dimitri.benin@it-designers.de>"
   ],
