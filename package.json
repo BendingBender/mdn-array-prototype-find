@@ -4,8 +4,10 @@
   "description": "MDN version of Array.prototype.find shim",
   "main": "index.js",
   "scripts": {
-    "clean": "rimraf index.min.js",
     "build": "uglifyjs -c -m --support-ie8 -o index.min.js --source-map index.min.js.map -- index.js",
+    "bump": "bump --prompt --tag --commit --all",
+    "clean": "rimraf 'index.min.js*'",
+    "release": "npm run clean && npm run build && npm run bump",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -33,6 +35,7 @@
   "homepage": "https://github.com/BendingBender/MDN-Array.prototype.find#readme",
   "devDependencies": {
     "rimraf": "^2.5.4",
-    "uglify-js": "^2.7.0"
+    "uglify-js": "^2.7.0",
+    "version-bump-prompt": "^1.5.2"
   }
 }

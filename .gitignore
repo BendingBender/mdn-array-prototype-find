@@ -3,5 +3,3 @@
 *.iml
 
 node_modules
-
-index.min.js*
