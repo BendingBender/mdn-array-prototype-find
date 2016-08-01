@@ -1,0 +1,25 @@
+{
+  "name": "mdn-array.prototype.find",
+  "description": "MDN version of Array.prototype.find shim",
+  "main": "index.min.js",
+  "authors": [
+    "Dimitri Benin <dimitri.benin@it-designers.de>"
+  ],
+  "license": "CC0-1.0",
+  "keywords": [
+    "MDN",
+    "shim",
+    "array",
+    "Array.prototype.find",
+    "Array.find",
+    "find"
+  ],
+  "homepage": "https://github.com/BendingBender/MDN-Array.prototype.find",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "mdn-array.prototype.find",
+  "version": "1.0.0",
+  "description": "MDN version of Array.prototype.find shim",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf index.min.js",
+    "build": "uglifyjs -c -m --support-ie8 -o index.min.js --source-map index.min.js.map -- index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BendingBender/MDN-Array.prototype.find.git"
+  },
+  "keywords": [
+    "MDN",
+    "shim",
+    "array",
+    "Array.prototype.find",
+    "Array.find",
+    "find"
+  ],
+  "author": "Dimitri Benin <dimitri.benin@it-designers.de>",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/BendingBender/MDN-Array.prototype.find/issues"
+  },
+  "homepage": "https://github.com/BendingBender/MDN-Array.prototype.find#readme",
+  "devDependencies": {
+    "rimraf": "^2.5.4",
+    "uglify-js": "^2.7.0"
+  }
+}
