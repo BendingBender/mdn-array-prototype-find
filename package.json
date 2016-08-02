@@ -8,7 +8,7 @@
     "bump": "bump --prompt --tag --commit --all",
     "clean": "rimraf 'index.min.js*'",
     "release": "npm run clean && npm run build && npm run bump",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha tests/*.js"
   },
   "repository": {
     "type": "git",
@@ -19,12 +19,12 @@
     "polyfill",
     "shim",
     "array",
-    "array",
     "prototype",
+    "find",
     "array.prototype.find",
     "array.find",
-    "find",
     "es6",
+    "ecmascript 6",
     "es2015"
   ],
   "author": "Dimitri Benin <dimitri.benin@it-designers.de>",
@@ -34,6 +34,8 @@
   },
   "homepage": "https://github.com/BendingBender/MDN-Array.prototype.find#readme",
   "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.0.0",
     "rimraf": "^2.5.4",
     "uglify-js": "^2.7.0",
     "version-bump-prompt": "^1.5.2"
