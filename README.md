@@ -4,9 +4,9 @@
 
 # ES6 `Array.prototype.find` shim
 
-Simple ES6 [Array.prototype.find](http://people.mozilla.org/%7Ejorendorff/es6-draft.html#sec-array.prototype.find) polyfill for older environments taken from [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find#Polyfill).
+Simple ES6 [Array.prototype.find](https://tc39.github.io/ecma262/#sec-array.prototype.find) polyfill for older environments taken from [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find#Polyfill).
 
-For browsers only, bower-friendly. Explicitly not meant to be used with node, use the following [shim](https://github.com/paulmillr/Array.prototype.find) if you wish a shim for node.
+For browsers only, bower-friendly. Explicitly not meant to be used with node, use [Array.prototype.find](https://github.com/paulmillr/Array.prototype.find) if you wish a shim for node.
 
 ## Installation
 * Just include repo before your scripts.
@@ -15,15 +15,18 @@ For browsers only, bower-friendly. Explicitly not meant to be used with node, us
 ## Usage
 
 * `Array.prototype.find(predicate[, thisArg])` returns first item that matches `predicate` function.
+
+#### Parameters
+
 * `predicate(value, index, collection)`: takes three arguments
     * `value`: current collection element
     * `index`: current collection element index
     * `collection`: the collection
+* `thisArg`: Optional. Object to use as `this` when executing `predicate`.
 
-Code example:
+#### Code example
 
 ```javascript
-// Default:
 [1, 5, 10, 15].find(function (a) { return a > 9; }) // 10
 ```
 
