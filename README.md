@@ -1,3 +1,5 @@
+[![browser support](https://ci.testling.com/BendingBender/MDN-Array.prototype.find.png)](https://ci.testling.com/BendingBender/MDN-Array.prototype.find)
+
 [![Build Status](https://travis-ci.org/BendingBender/MDN-Array.prototype.find.svg?branch=master)](https://travis-ci.org/BendingBender/MDN-Array.prototype.find)
 
 # ES6 `Array.prototype.find` shim

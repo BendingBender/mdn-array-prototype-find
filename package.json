@@ -7,8 +7,9 @@
     "build": "uglifyjs -c -m --support-ie8 -o index.min.js --source-map index.min.js.map -- index.js",
     "bump": "bump --prompt --tag --commit --all",
     "clean": "rimraf 'index.min.js*'",
-    "release": "npm run clean && npm run build && npm run bump",
-    "test": "mocha tests/*.js"
+    "release": "npm run clean && npm run build && npm run test-dist && npm run bump",
+    "test": "mocha tests/testSource.js",
+    "test-dist": "mocha tests/testDist.js"
   },
   "repository": {
     "type": "git",
@@ -39,5 +40,20 @@
     "rimraf": "^2.5.4",
     "uglify-js": "^2.7.0",
     "version-bump-prompt": "^1.5.2"
+  },
+  "testling": {
+    "harness": "mocha-bdd",
+    "files": ["tests/testDist.js"],
+    "browsers": [
+      "ie/8..latest",
+      "chrome/latest",
+      "firefox/latest",
+      "safari/5..latest",
+      "opera/11",
+      "opera/next",
+      "iphone/6",
+      "ipad/6",
+      "android-browser/4.2"
+    ]
   }
 }

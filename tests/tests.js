@@ -1,6 +1,6 @@
 var expect = require("chai").expect;
 
-var runTests = function (arrayFind) {
+function runTests(arrayFind) {
 
   describe('Array', function () {
 
@@ -87,46 +87,33 @@ var runTests = function (arrayFind) {
       });
     });
   });
-};
+}
 
-describe('shouldn`t shim when find is available', function () {
-  beforeEach(function () {
-    if (!Array.prototype.find) {
-      Array.prototype.find = function () {
-      };
-      Array.prototype.find.isDummy = true;
-    }
+module.exports = function run(requireTestee) {
+  var origFind,
+    implementation;
 
-    Array.prototype.find.isOrigFind = true;
-  });
-
-  afterEach(function () {
-    delete Array.prototype.find.isOrigFind;
-
-    if (Array.prototype.find.isDummy) {
-      delete Array.prototype.find;
-    }
-  });
-
-  it('shall leave existing impl when one is available', function () {
-    require('../index');
-
-    expect(Array.prototype.find.isOrigFind).to.equal(true);
-  })
-});
-
-describe('shim', function () {
+  origFind = Array.prototype.find;
   delete Array.prototype.find;
-  require('../index');
-  var implementation = Array.prototype.find;
 
-  describe('clean Object.prototype', function () {
-    runTests(implementation);
-  });
+  requireTestee();
 
-  describe('polluted Object.prototype', function () {
-    Object.prototype[1] = 42;
-    runTests(implementation);
-    delete Object.prototype[1];
+  implementation = Array.prototype.find;
+  if (origFind) {
+    Array.prototype.find = origFind;
+  } else {
+    delete Array.prototype.find;
+  }
+
+  describe('shim', function () {
+    describe('clean Object.prototype', function () {
+      runTests(implementation);
+    });
+
+    describe('polluted Object.prototype', function () {
+      Object.prototype[1] = 42;
+      runTests(implementation);
+      delete Object.prototype[1];
+    });
   });
-});
+};
